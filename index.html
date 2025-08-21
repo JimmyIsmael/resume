@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimmy I. Peña - Professional Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Header Section */
+        .header {
+            background: #ffffff;
+            border-bottom: 3px solid #34495e;
+            padding: 60px 0 40px 0;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            border: 3px solid #2c3e50;
+            overflow: hidden;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .name {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 1.3rem;
+            color: #34495e;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            color: #5d6d7e;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #bdc3c7;
+        }
+
+        .contact-item {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #3498db;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 50px 0;
+        }
+
+        .section {
+            margin-bottom: 60px;
+            background: #ffffff;
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 15px;
+        }
+
+        /* About Section */
+        .about-text {
+            font-size: 1.05rem;
+            color: #34495e;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 25px;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-category p {
+            color: #5d6d7e;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .job-info h3 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company-name {
+            font-size: 1.1rem;
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .job-dates {
+            text-align: right;
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .job-description {
+            color: #34495e;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .cert-category {
+            background: #f8f9fa;
+            padding: 25px;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+        }
+
+        .cert-category h3 {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cert-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cert-list li {
+            color: #34495e;
+            margin-bottom: 8px;
+            font-weight: 500;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .cert-list li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .education-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .degree-info h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            font-size: 1.05rem;
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        .education-dates {
+            text-align: right;
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .education-description {
+            color: #34495e;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #2c3e50;
+            color: white;
+            padding: 50px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-button:hover {
+            background: #2980b9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .name {
+                font-size: 2.2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .job-header,
+            .education-header {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .job-dates,
+            .education-dates {
+                text-align: left;
+            }
+
+            .skills-container,
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-img">
+                    <!-- Replace 'profile-picture.png' with your actual photo file -->
+                    <img src="profile-picture.png" alt="Jimmy I. Peña - Professional Photo" />
+                </div>
+                <h1 class="name">Jimmy I. Peña</h1>
+                <p class="title">Solutions Delivery Manager | Software Development Leader</p>
+                <p class="summary">
+                    Experienced software engineer with over 10 years of progressive leadership experience, 
+                    currently managing a team of 4 direct reports. Expert in system integration, API design, 
+                    and cross-platform solutions with a demonstrated history of delivering high-quality 
+                    software solutions and driving successful project outcomes in enterprise environments.
+                </p>
+                <div class="contact-info">
+                    <a href="mailto:jimmyismaelpena@gmail.com" class="contact-item">jimmyismaelpena@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/jimmy-i-pe%C3%B1a-ba5a9249/" class="contact-item" target="_blank">LinkedIn Profile</a>
+                    <span class="contact-item">Jacksonville, Florida</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- About Section -->
+            <section class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p class="about-text">
+                    Development Manager and Full-Stack Web Developer with over 10 years of comprehensive experience 
+                    in software engineering and technical leadership. Currently serving as a Solutions Delivery Manager 
+                    at Swisher, where I lead a team of 4 direct reports and oversee complex system integration projects. 
+                    My expertise encompasses multiple technologies and platforms, with a proven track record of delivering 
+                    high-quality software solutions and driving successful project outcomes in demanding enterprise environments.
+                </p>
+                <p class="about-text">
+                    I am passionate about bridging the gap between technical innovation and strategic business objectives. 
+                    Currently pursuing a Master's degree in Financial Technologies at the University of North Florida, 
+                    I am actively blending my technical expertise with financial acumen to drive innovation in the fintech space. 
+                    My bilingual capabilities (English and Spanish) and international experience uniquely position me to work 
+                    effectively with diverse, global teams and deliver solutions that meet complex organizational requirements.
+                </p>
+            </section>
+
+            <!-- Core Skills -->
+            <section class="section">
+                <h2 class="section-title">Core Competencies</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Backend Development</h3>
+                        <p>Expert proficiency in Java, Spring Boot, Node.js, Express, and REST/SOAP API development. Extensive experience with JWT authentication, Swagger documentation, and microservices architecture design and implementation.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frontend & Mobile Development</h3>
+                        <p>Advanced skills in Angular, HTML, CSS, JavaScript, jQuery, Bootstrap, and responsive web design. Mobile development expertise with Android Studio, Basic4Android, and cross-platform solution development.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Integration & Process Automation</h3>
+                        <p>Certified Dell Boomi Professional Developer with specialization in ETL processes, enterprise system integrations, CI/CD pipeline management, and process automation across multiple platforms.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Cloud & Database Management</h3>
+                        <p>Comprehensive Microsoft Azure expertise including Azure Queues, Azure AD, and Application Insights. Database administration and optimization with SQL Server, PostgreSQL, and NetSuite systems.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Leadership & Project Management</h3>
+                        <p>Proven team leadership capabilities, Agile/Scrum methodology implementation, stakeholder collaboration, and cross-functional project coordination. Extensive experience managing offshore development teams.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Legacy System Modernization</h3>
+                        <p>Comprehensive experience with Borland Delphi 7, Object Pascal, desktop application development, and modernizing legacy systems for diverse industry applications.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Experience -->
+            <section class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-info">
+                            <h3>Solutions Delivery Manager</h3>
+                            <div class="company-name">Swisher</div>
+                        </div>
+                        <div class="job-dates">March 2022 - Present</div>
+                    </div>
+                    <p class="job-description">
+                        Lead and manage a team of software engineers, ensuring alignment with project goals, timelines, and quality standards for system integrations. 
+                        Develop comprehensive integration strategies that align with business objectives, oversee system architecture design, and manage API development initiatives. 
+                        Coordinate effectively with stakeholders, vendors, and third-party service providers while maintaining rigorous testing standards and promoting 
+                        continuous improvement methodologies within the engineering team.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-info">
+                            <h3>Software Developer II</h3>
+                            <div class="company-name">Swisher</div>
+                        </div>
+                        <div class="job-dates">March 2020 - March 2022</div>
+                    </div>
+                    <p class="job-description">
+                        Focused on advanced software development and complex system integration projects. Collaborated extensively with cross-functional teams 
+                        to deliver scalable, enterprise-grade solutions while maintaining high-quality development standards and best practices.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-info">
+                            <h3>Software Developer</h3>
+                            <div class="company-name">Swisher</div>
+                        </div>
+                        <div class="job-dates">January 2017 - March 2020</div>
+                    </div>
+                    <p class="job-description">
+                        Developed comprehensive web applications using Java, Spring Boot, Angular, and Node.js. Managed complex ETL processes and application 
+                        integrations utilizing Dell Boomi and SSIS platforms. Designed and implemented REST APIs, integrated with Microsoft Azure services, 
+                        and maintained robust CI/CD pipelines while coordinating effectively with offshore development teams across multiple countries.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-info">
+                            <h3>Software Developer</h3>
+                            <div class="company-name">Swisher Dominicana, Inc.</div>
+                        </div>
+                        <div class="job-dates">November 2015 - July 2016</div>
+                    </div>
+                    <p class="job-description">
+                        Designed and implemented comprehensive Quality Control, Inventory, and Purchasing modules for enterprise ERP systems using Java, 
+                        Spring Boot, and PostgreSQL. Developed specialized mobile applications for Honeywell handheld devices and enhanced existing 
+                        systems using Borland Delphi technology stack.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-info">
+                            <h3>Lead Software Developer</h3>
+                            <div class="company-name">JQ Microsistemas</div>
+                        </div>
+                        <div class="job-dates">September 2012 - November 2015</div>
+                    </div>
+                    <p class="job-description">
+                        Led a team of three developers in comprehensive software development projects across various industry verticals. 
+                        Built sophisticated web applications using Groovy, Grails, and Vaadin frameworks. Developed mobile applications 
+                        and managed direct client relationships while delivering customized software solutions that met specific business requirements.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section class="section">
+                <h2 class="section-title">Professional Certifications & Achievements</h2>
+                <div class="cert-grid">
+                    <div class="cert-category">
+                        <h3>Professional Certifications</h3>
+                        <ul class="cert-list">
+                            <li>Dell Boomi Professional Developer</li>
+                            <li>Dell Boomi Associate Developer</li>
+                            <li>Spring Boot - Rapid Spring Application Development</li>
+                            <li>NetSuite Essentials</li>
+                            <li>Salsify Foundations Certification</li>
+                            <li>Basic Electronics Associate</li>
+                            <li>Associate Electronics Technician - Digital</li>
+                        </ul>
+                    </div>
+                    <div class="cert-category">
+                        <h3>Academic Honors</h3>
+                        <ul class="cert-list">
+                            <li>Summa Cum Laude - University of North Florida</li>
+                            <li>Honor to Merit Student</li>
+                        </ul>
+                    </div>
+                    <div class="cert-category">
+                        <h3>Technical Specializations</h3>
+                        <ul class="cert-list">
+                            <li>Salsify & PIMS Specialist</li>
+                            <li>Product Management Systems</li>
+                            <li>E-commerce Platform Integration</li>
+                        </ul>
+                    </div>
+                    <div class="cert-category">
+                        <h3>Language Proficiencies</h3>
+                        <ul class="cert-list">
+                            <li>English - Full Professional Proficiency</li>
+                            <li>Spanish - Native/Bilingual</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="degree-info">
+                            <h3>Master of Science - Financial Technologies</h3>
+                            <div class="institution">University of North Florida</div>
+                        </div>
+                        <div class="education-dates">January 2025 - May 2026 (In Progress)</div>
+                    </div>
+                    <p class="education-description">
+                        Advanced graduate studies blending technical expertise with financial acumen to drive innovation in the fintech space.
+                    </p>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="degree-info">
+                            <h3>Bachelor of Science - Information Systems/Business Minor</h3>
+                            <div class="institution">University of North Florida</div>
+                        </div>
+                        <div class="education-dates">2018 - 2021</div>
+                    </div>
+                    <p class="education-description">
+                        Comprehensive foundation in information systems with business acumen. Graduated Summa Cum Laude with highest honors.
+                    </p>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="degree-info">
+                            <h3>Ingeniería Informática</h3>
+                            <div class="institution">Universidad Tecnológica de Santiago (UTESA)</div>
+                        </div>
+                        <div class="education-dates">2010 - 2016</div>
+                    </div>
+                    <p class="education-description">
+                        Computer Engineering degree providing comprehensive technical foundation in software development and systems engineering.
+                    </p>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="degree-info">
+                            <h3>Associate in Computer Science</h3>
+                            <div class="institution">Instituto Politécnico La Esperanza</div>
+                        </div>
+                        <div class="education-dates">2006 - 2010</div>
+                    </div>
+                    <p class="education-description">
+                        Foundational technical education in computer science fundamentals and programming principles.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Professional Collaboration</h2>
+            <p>I welcome opportunities to discuss how my expertise in software development leadership and system integration can contribute to your organization's success.</p>
+            <a href="mailto:jimmyismaelpena@gmail.com" class="contact-button">Contact Me</a>
+        </div>
+    </section>
+
+</body>
+</html>
